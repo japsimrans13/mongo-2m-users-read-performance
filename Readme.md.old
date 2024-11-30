@@ -1,0 +1,28 @@
+
+# Run MongoDB using Docker
+
+```bash
+docker run --name mongodb -d -p 27017:27017 mongo:latest
+```
+
+# Start Server using pm2
+
+```bash
+npm run start
+```
+
+# Add users to MongoDB
+
+This will add 2 Million users to the MongoDB database
+
+```bash
+npm run add-users
+```
+
+# Delete users from MongoDB
+
+In case you want to delete all the users from the MongoDB database
+
+```bash
+npm run delete-users
+```
