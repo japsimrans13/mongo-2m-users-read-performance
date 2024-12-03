@@ -20,7 +20,7 @@ async function getUserByNonIndexedEmail(email) {
     ];
 
     // Check if the file already exists
-    const filename = 'results.xlsx';
+    const filename = 'results/non-indexed.xlsx';
     let wb;
 
     if (fs.existsSync(filename)) {
@@ -28,7 +28,7 @@ async function getUserByNonIndexedEmail(email) {
       wb = xlsx.readFile(filename);
 
       // Append the new data to the existing sheet
-      const ws = wb.Sheets[wb.SheetNames[0]]; // Assuming the first sheet
+      const ws = wb.Sheets[wb.SheetNames[0]]; // 
       const existingData = xlsx.utils.sheet_to_json(ws, { header: 1 });
 
       // Add the new row of data
@@ -63,4 +63,11 @@ if (!email) {
   process.exit(1);
 }
 
-getUserByNonIndexedEmail(email);
+// run the test 10 times
+const runTest = async () => {
+  for (let i = 0; i < 10; i++) {
+    await getUserByNonIndexedEmail(email);
+  }
+}
+
+runTest();

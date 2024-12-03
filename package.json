@@ -8,8 +8,8 @@
     "dev": "nodemon app.js",
     "add-users": "node ./tests/addUsers.js 100000",
     "delete-users": "node ./tests/deleteUsers.js",
-    "test:nonIndexed": "node ./tests/testNonIndexed.js user2000000",
-    "test:indexed": "node ./tests/testIndexed.js user2000000"
+    "test:nonIndexed": "node ./tests/nonIndexed.js user2000000",
+    "test:indexed": "node ./tests/indexed.js user2000000"
   },
   "keywords": [],
   "author": "",
